@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Optimal Healthcare Services LLC</title>
+    <meta
+      name="description"
+      content="Compassionate primary care and psychiatric services—personalized, evidence-based, and accessible."
+    />
+
+    <!-- Premium font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- Scroll progress -->
+    <div class="progress" aria-hidden="true">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Top strip -->
+    <div class="top-strip">
+      <div class="container top-strip-inner">
+        <div class="top-strip-left">
+          <span class="badge">Now Accepting Patients</span>
+          <span class="top-strip-text">Primary Care • Psychiatry • Telemedicine • Wellness</span>
+        </div>
+        <div class="top-strip-right">
+          <a class="top-link" href="#contact">Contact</a>
+          <a
+            class="top-link strong"
+            href="https://ebelechukwu-nwafor.clientsecure.me"
+            target="_blank"
+            rel="noopener"
+          >
+            Schedule
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header" id="header">
+      <div class="container header-inner">
+        <a class="brand" href="#home" aria-label="Go to homepage">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">
+            <span class="brand-title">Optimal Healthcare Services LLC</span>
+            <span class="brand-sub">Primary Care & Psychiatric Services</span>
+          </span>
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav">
+          <span class="sr-only">Toggle navigation</span>☰
+        </button>
+
+        <nav id="siteNav" class="nav" aria-label="Primary">
+          <a href="#about" data-nav="about">About</a>
+          <a href="#services" data-nav="services">Services</a>
+          <a href="#team" data-nav="team">Our Team</a>
+          <a href="#benefits" data-nav="benefits">Benefits</a>
+          <a href="#contact" data-nav="contact">Contact</a>
+
+          <a
+            class="btn btn-primary btn-small"
+            href="https://ebelechukwu-nwafor.clientsecure.me"
+            target="_blank"
+            rel="noopener"
+          >
+            Schedule an Appointment
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="home">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-bg" aria-hidden="true">
+          <div class="orb orb-1"></div>
+          <div class="orb orb-2"></div>
+          <div class="orb orb-3"></div>
+          <div class="gridlines"></div>
+        </div>
+
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Optimal Healthcare Services</p>
+            <h1>Care that feels personal, modern, and truly supportive.</h1>
+            <p class="lead">
+              Compassionate and comprehensive primary care and psychiatric services—evidence-based, culturally responsive,
+              and focused on whole-person wellness.
+            </p>
+
+            <div class="hero-cta">
+              <a
+                class="btn btn-primary"
+                href="https://ebelechukwu-nwafor.clientsecure.me"
+                target="_blank"
+                rel="noopener"
+              >
+                Schedule an Appointment
+              </a>
+              <a class="btn btn-soft" href="#services">Explore Services</a>
+            </div>
+
+            <div class="hero-highlights">
+              <div class="highlight-card">
+                <span class="icon">✓</span>
+                <div>
+                  <p class="h-title">Evidence-based</p>
+                  <p class="h-sub">Trusted clinical approach</p>
+                </div>
+              </div>
+              <div class="highlight-card">
+                <span class="icon">⚡</span>
+                <div>
+                  <p class="h-title">Telemedicine</p>
+                  <p class="h-sub">Care on your schedule</p>
+                </div>
+              </div>
+              <div class="highlight-card">
+                <span class="icon">♥</span>
+                <div>
+                  <p class="h-title">Whole-person care</p>
+                  <p class="h-sub">Mind + body wellness</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-media reveal">
+            <img
+              src="https://static.wixstatic.com/media/51fb1b_906fa5be8f9647e2a79ca54d9d2bb083~mv2.png/v1/fill/w_706%2Ch_492%2Cal_c%2Cq_85/usm_0.66_1.00_0.01/PHOTO-2025-12-15-01-22-00_edited.png"
+              alt="Optimal Healthcare Services team"
+              loading="eager"
+            />
+            <div class="hero-float">
+              <p class="float-title">Fast ways to reach us</p>
+              <div class="float-actions">
+                <a class="chip" href="tel:+14106306933">Call</a>
+                <button class="chip" id="copyEmailBtn" type="button">Copy Email</button>
+                <button class="chip chip-accent" id="openScheduleModal" type="button">Schedule</button>
+              </div>
+              <p class="float-sub muted" id="copyEmailHint">zkoroma@optimalhealthcare.net</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT (UPDATED COLLAGE LAYOUT) -->
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Our Approach</h2>
+            <div class="accent-line" aria-hidden="true"></div>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-copy reveal">
+              <p class="section-lead">
+                We provide both primary care and psychiatric care, combining evidence-based medicine with personalized treatment
+                plans. From preventive care and chronic condition management to mental health support and medication management,
+                we focus on balance, resilience, and long-term wellness—with compassionate follow-through.
+              </p>
+
+              <div class="stats" aria-label="Practice highlights">
+                <div class="stat">
+                  <p class="stat-num" data-count="20">0</p>
+                  <p class="stat-label">Years combined experience</p>
+                </div>
+                <div class="stat">
+                  <p class="stat-num" data-count="8">0</p>
+                  <p class="stat-label">Core services offered</p>
+                </div>
+                <div class="stat">
+                  <p class="stat-num" data-count="3">0</p>
+                  <p class="stat-label">Care options: in-person / virtual / wellness</p>
+                </div>
+              </div>
+            </div>
+
+          <div class="about-visual reveal" aria-label="Care imagery">
+            <figure class="visual-card visual-main">
+              <div class="visual-img">
+                <img
+                  src="https://static.wixstatic.com/media/51fb1b_0b23fd57791a4134a02f17238fc9cb85~mv2.png/v1/crop/x_0%2Cy_184%2Cw_1024%2Ch_1168/fill/w_1100%2Ch_900%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/Nurse%20and%20patient%20consultation%20in%20clinic.png"
+                  alt="Clinic consultation"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>Primary care & preventive wellness</figcaption>
+            </figure>
+
+            <figure class="visual-card visual-side">
+              <div class="visual-img">
+                <img
+                  src="https://static.wixstatic.com/media/51fb1b_ac0ce5c9cbec4983b87b8327b32224ad~mv2.png/v1/crop/x_0%2Cy_383%2Cw_1024%2Ch_686/fill/w_900%2Ch_560%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/ChatGPT%20Image%20Dec%2015%2C%202025%2C%2006_23_03%20PM.png"
+                  alt="Supportive mental health session"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>Psychiatric care & emotional support</figcaption>
+            </figure>
+
+            <div class="visual-badge">
+              <span class="badge-dot" aria-hidden="true"></span>
+              Whole-person care
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services" class="section section-alt">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Our Services</h2>
+            <div class="accent-line" aria-hidden="true"></div>
+          </div>
+
+          <p class="section-lead reveal">
+            Search or filter services, then click <strong>Learn more</strong> for details.
+          </p>
+
+          <div class="services-toolbar reveal" role="region" aria-label="Services filter">
+            <div class="search">
+              <span class="search-icon" aria-hidden="true">⌕</span>
+              <input id="serviceSearch" type="search" placeholder="Search services (e.g., telemedicine, weight loss)..." />
+            </div>
+
+            <div class="chips" aria-label="Service categories">
+              <button class="chip chip-on" data-filter="all" type="button">All</button>
+              <button class="chip" data-filter="primary" type="button">Primary Care</button>
+              <button class="chip" data-filter="psychiatry" type="button">Psychiatry</button>
+              <button class="chip" data-filter="wellness" type="button">Wellness</button>
+              <button class="chip" data-filter="virtual" type="button">Virtual</button>
+              <button class="chip" data-filter="training" type="button">Training</button>
+            </div>
+          </div>
+
+          <div class="service-grid reveal" id="serviceGrid">
+            <article class="svc-card" data-tags="psychiatry medication evaluation">
+              <div class="svc-top">
+                <span class="svc-badge">Psychiatry</span>
+                <h3>Psychiatric Evaluations</h3>
+              </div>
+              <p>Comprehensive assessments + medication management focused on outcomes and comfort.</p>
+              <button class="link" data-open="Psychiatric Evaluations" type="button">Learn more →</button>
+            </article>
+
+            <article class="svc-card" data-tags="primary physical preventive checkup">
+              <div class="svc-top">
+                <span class="svc-badge">Primary Care</span>
+                <h3>Annual Physicals</h3>
+              </div>
+              <p>Preventive visits with screenings, vitals, labs (as needed), and personalized guidance.</p>
+              <button class="link" data-open="Annual Physicals" type="button">Learn more →</button>
+            </article>
+
+            <article class="svc-card" data-tags="wellness iv hydration vitamins fatigue recovery">
+              <div class="svc-top">
+                <span class="svc-badge">Wellness</span>
+                <h3>IV Hydration Therapy</h3>
+              </div>
+              <p>Hydration + nutrients tailored to your needs—energy, recovery, and wellness support.</p>
+              <button class="link" data-open="IV Hydration Therapy" type="button">Learn more →</button>
+            </article>
+
+            <article class="svc-card" data-tags="training preceptorship nurse practitioner student">
+              <div class="svc-top">
+                <span class="svc-badge">Training</span>
+                <h3>NP Preceptorship</h3>
+              </div>
+              <p>Supportive preceptorship experiences for NP students based on availability and fit.</p>
+              <button class="link" data-open="NP Preceptorship" type="button">Learn more →</button>
+            </article>
+
+            <article class="svc-card" data-tags="therapy psychotherapy anxiety depression trauma counseling">
+              <div class="svc-top">
+                <span class="svc-badge">Therapy</span>
+                <h3>Psychotherapy</h3>
+              </div>
+              <p>Supportive therapy to build coping strategies and improve emotional well-being.</p>
+              <button class="link" data-open="Psychotherapy" type="button">Learn more →</button>
+            </article>
+
+            <article class="svc-card" data-tags="lifestyle weight loss management coaching">
+              <div class="svc-top">
+                <span class="svc-badge">Lifestyle</span>
+                <h3>Weight Loss Management</h3>
+              </div>
+              <p>Practical, compassionate support for sustainable progress and long-term health habits.</p>
+              <button class="link" data-open="Weight Loss Management" type="button">Learn more →</button>
+            </article>
+
+            <article class="svc-card" data-tags="virtual telemedicine online follow-up medication">
+              <div class="svc-top">
+                <span class="svc-badge">Virtual</span>
+                <h3>Telemedicine</h3>
+              </div>
+              <p>Secure virtual visits for many services—evaluation, follow-ups, and medication management.</p>
+              <button class="link" data-open="Telemedicine" type="button">Learn more →</button>
+            </article>
+
+            <article class="svc-card" data-tags="primary chronic disease diabetes thyroid heart">
+              <div class="svc-top">
+                <span class="svc-badge">Primary Care</span>
+                <h3>Chronic Disease Management</h3>
+              </div>
+              <p>Ongoing care for diabetes, heart disease, thyroid disorders—monitoring + lifestyle support.</p>
+              <button class="link" data-open="Chronic Disease Management" type="button">Learn more →</button>
+            </article>
+          </div>
+
+          <div class="services-cta reveal">
+            <a
+              class="btn btn-primary"
+              href="https://ebelechukwu-nwafor.clientsecure.me"
+              target="_blank"
+              rel="noopener"
+            >
+              Schedule an Appointment
+            </a>
+            <a class="btn btn-soft" href="#contact">Message Us</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEAM (UPDATED BUTTON TEXT) -->
+      <section id="team" class="section">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Meet Our Practitioners</h2>
+            <div class="accent-line" aria-hidden="true"></div>
+          </div>
+
+          <p class="section-lead reveal">
+            Compassionate clinicians dedicated to high-quality care and better access.
+          </p>
+
+          <div class="team-grid reveal">
+            <article class="profile">
+              <img
+                src="https://static.wixstatic.com/media/51fb1b_9368b0c88f5f488fb8135454b3d72258~mv2.jpg/v1/fill/w_317%2Ch_367%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/IMG_2698.jpg"
+                alt="Abu Koroma"
+                loading="lazy"
+              />
+              <div class="profile-body">
+                <p class="role">Psychiatric Nurse Practitioner</p>
+                <h3 class="name">Abu Koroma, MSN, CRNA, PMPHNP-BC</h3>
+                <p class="bio">
+                  Healthcare professional with 20+ years across critical care, anesthesia, and mental health. U.S. Army
+                  Reserve veteran and community mentor committed to supporting well-being across the lifespan.
+                </p>
+                <button class="btn btn-outline btn-small" data-open="Meet Abu" type="button">Read full bio</button>
+              </div>
+            </article>
+
+            <article class="profile">
+              <img
+                src="https://static.wixstatic.com/media/51fb1b_906fa5be8f9647e2a79ca54d9d2bb083~mv2.png/v1/crop/x_0%2Cy_0%2Cw_706%2Ch_492/fill/w_317%2Ch_367%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/PHOTO-2025-12-15-01-22-00_edited.png"
+                alt="Zainab Koroma"
+                loading="lazy"
+              />
+              <div class="profile-body">
+                <p class="role">Nurse Practitioner</p>
+                <h3 class="name">Zainab Koroma, PMHNP-BC, FNP-C</h3>
+                <p class="bio">
+                  Nurse practitioner and healthcare leader across primary care and mental health—committed to compassionate,
+                  culturally responsive care that improves access and outcomes.
+                </p>
+                <button class="btn btn-outline btn-small" data-open="Meet Zainab" type="button">Read full bio</button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Testimonials slider -->
+          <div class="testimonial reveal" aria-label="Patient feedback">
+            <div class="testimonial-head">
+              <h3>What patients appreciate</h3>
+              <div class="t-controls">
+                <button class="t-btn" id="tPrev" type="button" aria-label="Previous testimonial">←</button>
+                <button class="t-btn" id="tNext" type="button" aria-label="Next testimonial">→</button>
+              </div>
+            </div>
+
+            <div class="t-card" id="tCard" role="group" aria-roledescription="carousel" aria-label="Testimonials">
+              <p class="t-quote" id="tQuote"></p>
+              <p class="t-meta" id="tMeta"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BENEFITS -->
+      <section id="benefits" class="section section-ink">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Advantages</h2>
+            <div class="accent-line accent-line-ink" aria-hidden="true"></div>
+          </div>
+
+          <p class="section-lead section-lead-ink reveal">
+            Personalized care + modern access. We aim for clear plans, consistent follow-up, and a supportive experience.
+          </p>
+
+          <div class="card-grid reveal">
+            <article class="card">
+              <h3>Personalized Support</h3>
+              <p class="muted-ink">Empowering services</p>
+              <p>Individualized plans that fit your goals—without feeling rushed.</p>
+            </article>
+
+            <article class="card">
+              <h3>Holistic Well-being</h3>
+              <p class="muted-ink">Mind-body balance</p>
+              <p>We consider sleep, stress, habits, and environment as part of real health.</p>
+            </article>
+
+            <article class="card">
+              <h3>Accessible Care</h3>
+              <p class="muted-ink">Virtual + in-person</p>
+              <p>Telemedicine options that help you stay consistent—even when life is busy.</p>
+            </article>
+          </div>
+
+          <!-- FAQ accordion -->
+          <div class="faq reveal" aria-label="Frequently asked questions">
+            <h3 class="faq-title">FAQs</h3>
+            <div class="faq-grid">
+              <details>
+                <summary>Do you offer telemedicine visits?</summary>
+                <p>Yes—secure virtual visits are available for many services, including follow-ups and medication management.</p>
+              </details>
+              <details>
+                <summary>What should I bring to my first visit?</summary>
+                <p>Bring your ID, insurance info (if applicable), medication list, and any recent labs or records you’d like us to review.</p>
+              </details>
+              <details>
+                <summary>Do you treat both primary care and mental health?</summary>
+                <p>Yes—our practice integrates primary care and psychiatric services, supporting whole-person wellness.</p>
+              </details>
+              <details>
+                <summary>How do I schedule?</summary>
+                <p>Use the scheduling portal button at the top, or contact us directly via phone/email.</p>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Contact Us</h2>
+            <div class="accent-line" aria-hidden="true"></div>
+          </div>
+
+          <p class="section-lead reveal">
+            Questions, feedback, or ready to get started? Send a message or schedule directly.
+          </p>
+
+          <div class="contact-grid reveal">
+            <form class="form" id="contactForm" novalidate>
+              <h3 class="form-title">Send Message</h3>
+
+              <div class="field-row">
+                <label>
+                  First name*
+                  <input name="firstName" required />
+                  <span class="error" aria-live="polite"></span>
+                </label>
+                <label>
+                  Last name*
+                  <input name="lastName" required />
+                  <span class="error" aria-live="polite"></span>
+                </label>
+              </div>
+
+              <div class="field-row">
+                <label>
+                  Email*
+                  <input type="email" name="email" required />
+                  <span class="error" aria-live="polite"></span>
+                </label>
+                <label>
+                  Phone*
+                  <input type="tel" name="phone" required />
+                  <span class="error" aria-live="polite"></span>
+                </label>
+              </div>
+
+              <label>
+                Write a message
+                <textarea name="message" rows="5"></textarea>
+                <span class="error" aria-live="polite"></span>
+              </label>
+
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit">Submit</button>
+                <button class="btn btn-soft" type="button" id="openScheduleModal2">Schedule</button>
+              </div>
+
+              <p class="tiny muted">
+                Tip: Connect this form to Formspree / Netlify Forms / your backend to actually send messages.
+              </p>
+            </form>
+
+            <aside class="contact-aside">
+              <div class="aside-block">
+                <h3>Office</h3>
+                <ul class="plain">
+                  <li><strong>Address:</strong> 111 East Market Street Suite 201, York, PA 17401</li>
+                  <li><strong>Phone:</strong> <a href="tel:+14106306933">+1 (410) 630-6933</a></li>
+                  <li><strong>Email:</strong> <a href="mailto:zkoroma@optimalhealthcare.net">zkoroma@optimalhealthcare.net</a></li>
+                </ul>
+              </div>
+
+              <div class="aside-block">
+                <h3>Hours</h3>
+                <ul class="plain">
+                  <li>Mon–Fri: 9:00 AM – 6:00 PM</li>
+                  <li>Sat: 10:00 AM – 4:00 PM</li>
+                  <li>Sun: Closed</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <p class="footer-title">Optimal Healthcare Services LLC</p>
+          <p class="muted footer-meta">
+            111 East Market Street Suite 201, York, PA 17401 • (410) 630-6933 • zkoroma@optimalhealthcare.net
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#home">Privacy Policy</a>
+          <a href="#home">Accessibility Statement</a>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p class="muted">© 2035 by Optimal Healthcare Services LLC • Powered and secured</p>
+      </div>
+    </footer>
+
+    <!-- Floating actions -->
+    <button class="fab" id="fabSchedule" type="button" aria-label="Schedule an appointment">
+      Schedule
+    </button>
+    <button class="to-top" id="toTop" type="button" aria-label="Back to top">↑</button>
+
+    <!-- Modals -->
+    <dialog class="modal" id="infoModal" aria-label="Information dialog">
+      <div class="modal-card">
+        <button class="modal-x" id="closeInfoModal" aria-label="Close">✕</button>
+        <h3 id="modalTitle"></h3>
+        <p class="muted" id="modalTag"></p>
+        <p id="modalBody"></p>
+        <ul class="modal-list" id="modalList"></ul>
+        <div class="modal-actions">
+          <a
+            class="btn btn-primary"
+            href="https://ebelechukwu-nwafor.clientsecure.me"
+            target="_blank"
+            rel="noopener"
+          >
+            Schedule
+          </a>
+          <a class="btn btn-soft" href="#contact" id="modalContactLink">Message Us</a>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="modal" id="scheduleModal" aria-label="Schedule appointment">
+      <div class="modal-card">
+        <button class="modal-x" id="closeScheduleModal" aria-label="Close">✕</button>
+        <h3>Schedule an Appointment</h3>
+        <p class="muted">
+          Choose the fastest option:
+        </p>
+        <div class="modal-actions">
+          <a
+            class="btn btn-primary"
+            href="https://ebelechukwu-nwafor.clientsecure.me"
+            target="_blank"
+            rel="noopener"
+          >
+            Open Scheduling Portal
+          </a>
+          <a class="btn btn-soft" href="tel:+14106306933">Call Office</a>
+          <a class="btn btn-outline" href="mailto:zkoroma@optimalhealthcare.net">Email</a>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Toast -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
