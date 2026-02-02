@@ -12,6 +12,20 @@ function toast(msg) {
   el._t = window.setTimeout(() => el.classList.remove("show"), 2200);
 }
 
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// Stagger reveal timing within each section for a premium cascade
+if (!reduceMotion) {
+  document.querySelectorAll("section, header, footer").forEach((block) => {
+    const items = [...block.querySelectorAll(".reveal")];
+    items.forEach((el, i) => {
+      const d = Math.min(i * 80, 320); // cap delay so it never feels slow
+      el.style.setProperty("--d", `${d}ms`);
+    });
+  });
+}
+
+
 function openDialog(dialog) {
   if (!dialog) return;
   if (typeof dialog.showModal === "function") dialog.showModal();
@@ -146,6 +160,8 @@ const statsObserver = new IntersectionObserver(
   { threshold: 0.35 }
 );
 if (statsSection) statsObserver.observe(statsSection);
+
+
 
 // -----------------------------
 // Services filtering + modal details (UPDATED for longer bios + bullets)
@@ -339,6 +355,7 @@ const tQuote = $("#tQuote");
 const tMeta = $("#tMeta");
 const tPrev = $("#tPrev");
 const tNext = $("#tNext");
+const tCard = $("#tCard");
 
 const testimonials = [
   { quote: "Clear plan, no judgment, and I finally felt heard.", meta: "Patient feedback • Communication" },
@@ -354,14 +371,29 @@ function renderTestimonial() {
 }
 renderTestimonial();
 
+function transitionTo(newIndex) {
+  if (!tCard || reduceMotion) {
+    tIndex = newIndex;
+    renderTestimonial();
+    return;
+  }
+
+  tCard.classList.add("t-fade");
+  window.setTimeout(() => {
+    tIndex = newIndex;
+    renderTestimonial();
+    tCard.classList.remove("t-fade");
+  }, 180);
+}
+
 function nextT() {
-  tIndex = (tIndex + 1) % testimonials.length;
-  renderTestimonial();
+  transitionTo((tIndex + 1) % testimonials.length);
 }
+
 function prevT() {
-  tIndex = (tIndex - 1 + testimonials.length) % testimonials.length;
-  renderTestimonial();
+  transitionTo((tIndex - 1 + testimonials.length) % testimonials.length);
 }
+
 
 tNext?.addEventListener("click", nextT);
 tPrev?.addEventListener("click", prevT);
@@ -451,3 +483,7 @@ form?.addEventListener("submit", (evt) => {
   toast("Thanks! Your message is ready to send (connect backend to deliver).");
   form.reset();
 });
+
+
+
+

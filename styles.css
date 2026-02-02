@@ -17,6 +17,8 @@
   --container: 1120px;
 
   --focus: 0 0 0 4px rgba(74,163,255,.26);
+  --ease: cubic-bezier(.2,.8,.2,1);
+
 }
 
 *{ box-sizing: border-box; }
@@ -902,6 +904,97 @@ textarea{ resize: vertical; }
     height: 260px; /* same height when stacked */
   }
 }
+
+/* -----------------------------
+   Premium Motion Pack
+------------------------------ */
+
+/* Stagger support for existing reveals */
+.reveal{
+  transition-delay: var(--d, 0ms);
+  will-change: opacity, transform;
+}
+
+/* Ambient hero orbs (subtle floating) */
+@keyframes floaty{
+  0%, 100% { transform: translate3d(0,0,0); }
+  50%      { transform: translate3d(0,-14px,0); }
+}
+.orb{
+  animation: floaty 14s var(--ease) infinite;
+}
+.orb-1{ animation-duration: 14s; }
+.orb-2{ animation-duration: 18s; animation-delay: -4s; }
+.orb-3{ animation-duration: 22s; animation-delay: -9s; }
+
+/* Section accent line “draw” */
+@keyframes lineGrow{
+  from{ transform: scaleX(.15); opacity: .35; }
+  to  { transform: scaleX(1); opacity: 1; }
+}
+.section-head .accent-line{
+  transform-origin: left;
+  transform: scaleX(.15);
+  opacity: .35;
+}
+.section-head.visible .accent-line{
+  animation: lineGrow .65s var(--ease) forwards;
+}
+
+/* Slightly nicer hover micro-interactions */
+.svc-card, .profile, .card, .stat{
+  transition: transform .14s var(--ease), box-shadow .2s var(--ease), border-color .2s var(--ease);
+}
+.svc-card:hover, .profile:hover, .card:hover, .stat:hover{
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+/* Button “shine” (subtle) */
+.btn-primary{
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::before{
+  content:"";
+  position: absolute;
+  inset: -40% -60%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.40), transparent);
+  transform: translateX(-120%) skewX(-12deg);
+  transition: transform .75s var(--ease);
+  pointer-events: none;
+}
+.btn-primary:hover::before{
+  transform: translateX(120%) skewX(-12deg);
+}
+
+/* Modal pop-in */
+@keyframes modalIn{
+  from { transform: translateY(10px) scale(.985); opacity: 0; }
+  to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+.modal[open] .modal-card{
+  animation: modalIn .18s var(--ease);
+}
+
+/* Testimonial crossfade hook (JS toggles .t-fade) */
+.t-card{
+  transition: opacity .18s var(--ease), transform .18s var(--ease);
+}
+.t-card.t-fade{
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .orb{ animation: none !important; }
+  .btn-primary::before{ transition: none !important; }
+  .modal[open] .modal-card{ animation: none !important; }
+  .t-card{ transition: none !important; }
+}
+
+
 
 
 /* Responsive */
