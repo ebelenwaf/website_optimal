@@ -236,13 +236,13 @@ const modalList = $("#modalList");
 
 // Modal content (services + practitioners)
 const modalContent = {
-"Psychiatry & Psychotherapy": {
+"Psychiatry & Behavioral Therapy": {
   tag: "Psychiatry & Therapy",
   body:
-    "Integrated behavioral health care that includes psychiatric evaluations, psychotherapy, and medication management. Visits focus on understanding your goals, creating a clear plan, and providing supportive follow-through.",
+    "Integrated behavioral health care that includes psychiatric evaluations, behavioral therapy, and medication management. Visits focus on understanding your goals, creating a clear plan, and providing supportive follow-through.",
   bullets: [
     "Psychiatric evaluations + treatment planning",
-    "Psychotherapy for stress, anxiety, depression, and life transitions",
+    "Behavioral therapy for stress, anxiety, depression, and life transitions",
     "Medication management when appropriate",
     "Supportive care with clear next steps and follow-up"
   ]
