@@ -272,6 +272,13 @@ const modalContent = {
   ]
 },
 
+"Telemedicine": {
+  tag: "Virtual",
+  body:
+    "Secure virtual visits for many services including evaluations, follow-ups, and medication management—convenient care from home while maintaining continuity.",
+  bullets: []
+},
+
 
   // UPDATED: longer bios + bullet highlights
   "Meet Abu": {
