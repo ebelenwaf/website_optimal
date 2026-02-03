@@ -1002,7 +1002,11 @@ textarea{ resize: vertical; }
   .hero-grid{ grid-template-columns: 1fr; }
   .hero-highlights{ grid-template-columns: 1fr; }
 
-  .service-grid{ grid-template-columns: repeat(2, 1fr); }
+/*  .service-grid{ grid-template-columns: repeat(2, 1fr); }*/
+.service-grid{
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
 
   .team-grid{ grid-template-columns: 1fr; }
   .profile{ grid-template-columns: 1fr; }

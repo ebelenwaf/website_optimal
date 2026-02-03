@@ -175,7 +175,7 @@
                   <p class="stat-label">Years combined experience</p>
                 </div>
                 <div class="stat">
-                  <p class="stat-num" data-count="8">0</p>
+                  <p class="stat-num" data-count="4">0</p>
                   <p class="stat-label">Core services offered</p>
                 </div>
                 <div class="stat">
@@ -235,89 +235,68 @@
               <input id="serviceSearch" type="search" placeholder="Search services (e.g., telemedicine, weight loss)..." />
             </div>
 
-            <div class="chips" aria-label="Service categories">
+<!--             <div class="chips" aria-label="Service categories">
               <button class="chip chip-on" data-filter="all" type="button">All</button>
               <button class="chip" data-filter="primary" type="button">Primary Care</button>
               <button class="chip" data-filter="psychiatry" type="button">Psychiatry</button>
               <button class="chip" data-filter="wellness" type="button">Wellness</button>
               <button class="chip" data-filter="virtual" type="button">Virtual</button>
               <button class="chip" data-filter="training" type="button">Training</button>
+            </div> -->
+
+            <div class="chips" aria-label="Service categories">
+              <button class="chip chip-on" data-filter="all" type="button">All</button>
+              <button class="chip" data-filter="primary" type="button">Primary Care</button>
+              <button class="chip" data-filter="psychiatry" type="button">Psychiatry & Therapy</button>
+              <button class="chip" data-filter="wellness" type="button">Lifestyle & Wellness</button>
+              <button class="chip" data-filter="virtual" type="button">Virtual</button>
             </div>
+
+
           </div>
 
           <div class="service-grid reveal" id="serviceGrid">
-            <article class="svc-card" data-tags="psychiatry medication evaluation">
+            <!-- Combined: Psychiatric Evaluations + Psychotherapy -->
+            <article class="svc-card" data-tags="psychiatry psychotherapy therapy counseling medication evaluation anxiety depression trauma">
               <div class="svc-top">
-                <span class="svc-badge">Psychiatry</span>
-                <h3>Psychiatric Evaluations</h3>
+                <span class="svc-badge">Psychiatry & Therapy</span>
+                <h3>Psychiatry & Psychotherapy</h3>
               </div>
-              <p>Comprehensive assessments + medication management focused on outcomes and comfort.</p>
-              <button class="link" data-open="Psychiatric Evaluations" type="button">Learn more →</button>
+              <p>Evaluations, therapy, and medication management—supportive care with clear treatment plans.</p>
+              <button class="link" data-open="Psychiatry & Psychotherapy" type="button">Learn more →</button>
             </article>
 
-            <article class="svc-card" data-tags="primary physical preventive checkup">
+            <!-- Combined: Annual Physicals + Chronic Disease -->
+            <article class="svc-card" data-tags="primary physical preventive checkup chronic disease diabetes thyroid heart hypertension management">
               <div class="svc-top">
                 <span class="svc-badge">Primary Care</span>
-                <h3>Annual Physicals</h3>
+                <h3>Primary Care & Chronic Disease</h3>
               </div>
-              <p>Preventive visits with screenings, vitals, labs (as needed), and personalized guidance.</p>
-              <button class="link" data-open="Annual Physicals" type="button">Learn more →</button>
+              <p>Annual physicals, preventive screenings, and ongoing management for chronic conditions.</p>
+              <button class="link" data-open="Primary Care & Chronic Disease" type="button">Learn more →</button>
             </article>
 
-            <article class="svc-card" data-tags="wellness iv hydration vitamins fatigue recovery">
+            <!-- Combined: Lifestyle + Wellness -->
+            <article class="svc-card" data-tags="wellness lifestyle weight loss iv hydration vitamins fatigue recovery coaching">
               <div class="svc-top">
-                <span class="svc-badge">Wellness</span>
-                <h3>IV Hydration Therapy</h3>
+                <span class="svc-badge">Lifestyle & Wellness</span>
+                <h3>Lifestyle & Wellness</h3>
               </div>
-              <p>Hydration + nutrients tailored to your needs—energy, recovery, and wellness support.</p>
-              <button class="link" data-open="IV Hydration Therapy" type="button">Learn more →</button>
+              <p>Weight loss support + IV hydration options tailored to your goals, energy, and recovery.</p>
+              <button class="link" data-open="Lifestyle & Wellness" type="button">Learn more →</button>
             </article>
 
-            <article class="svc-card" data-tags="training preceptorship nurse practitioner student">
-              <div class="svc-top">
-                <span class="svc-badge">Training</span>
-                <h3>NP Preceptorship</h3>
-              </div>
-              <p>Supportive preceptorship experiences for NP students based on availability and fit.</p>
-              <button class="link" data-open="NP Preceptorship" type="button">Learn more →</button>
-            </article>
-
-            <article class="svc-card" data-tags="therapy psychotherapy anxiety depression trauma counseling">
-              <div class="svc-top">
-                <span class="svc-badge">Therapy</span>
-                <h3>Psychotherapy</h3>
-              </div>
-              <p>Supportive therapy to build coping strategies and improve emotional well-being.</p>
-              <button class="link" data-open="Psychotherapy" type="button">Learn more →</button>
-            </article>
-
-            <article class="svc-card" data-tags="lifestyle weight loss management coaching">
-              <div class="svc-top">
-                <span class="svc-badge">Lifestyle</span>
-                <h3>Weight Loss Management</h3>
-              </div>
-              <p>Practical, compassionate support for sustainable progress and long-term health habits.</p>
-              <button class="link" data-open="Weight Loss Management" type="button">Learn more →</button>
-            </article>
-
-            <article class="svc-card" data-tags="virtual telemedicine online follow-up medication">
+            <!-- Keep: Telemedicine -->
+            <article class="svc-card" data-tags="virtual telemedicine online follow-up medication primary psychiatry wellness">
               <div class="svc-top">
                 <span class="svc-badge">Virtual</span>
                 <h3>Telemedicine</h3>
               </div>
-              <p>Secure virtual visits for many services—evaluation, follow-ups, and medication management.</p>
+              <p>Secure virtual visits for primary care and mental health follow-ups—care that fits your schedule.</p>
               <button class="link" data-open="Telemedicine" type="button">Learn more →</button>
             </article>
-
-            <article class="svc-card" data-tags="primary chronic disease diabetes thyroid heart">
-              <div class="svc-top">
-                <span class="svc-badge">Primary Care</span>
-                <h3>Chronic Disease Management</h3>
-              </div>
-              <p>Ongoing care for diabetes, heart disease, thyroid disorders—monitoring + lifestyle support.</p>
-              <button class="link" data-open="Chronic Disease Management" type="button">Learn more →</button>
-            </article>
           </div>
+
 
           <div class="services-cta reveal">
             <a
@@ -354,7 +333,7 @@
               />
               <div class="profile-body">
                 <p class="role">Psychiatric Nurse Practitioner</p>
-                <h3 class="name">Abu Koroma, MSN, CRNA, PMPHNP-BC</h3>
+                <h3 class="name">Abu Koroma, PMHNP-BC</h3>
                 <p class="bio">
                   Healthcare professional with 20+ years across critical care, anesthesia, and mental health. U.S. Army
                   Reserve veteran and community mentor committed to supporting well-being across the lifespan.
@@ -509,9 +488,9 @@
                 <button class="btn btn-soft" type="button" id="openScheduleModal2">Schedule</button>
               </div>
 
-              <p class="tiny muted">
+<!--               <p class="tiny muted">
                 Tip: Connect this form to Formspree / Netlify Forms / your backend to actually send messages.
-              </p>
+              </p> -->
             </form>
 
             <aside class="contact-aside">
@@ -554,7 +533,7 @@
       </div>
 
       <div class="container footer-bottom">
-        <p class="muted">© 2035 by Optimal Healthcare Services LLC • Powered and secured</p>
+        <p class="muted">© Optimal Healthcare Services LLC • Powered and secured</p>
       </div>
     </footer>
 

@@ -181,13 +181,21 @@ function matchesFilter(card) {
 
   if (activeFilter === "all") return qOk;
 
+  // const map = {
+  //   primary: ["primary", "physical", "chronic"],
+  //   psychiatry: ["psychiatry", "medication", "evaluation"],
+  //   wellness: ["wellness", "iv", "hydration"],
+  //   virtual: ["telemedicine", "virtual", "online"],
+  //   training: ["preceptorship", "training", "student"]
+  // };
+
   const map = {
-    primary: ["primary", "physical", "chronic"],
-    psychiatry: ["psychiatry", "medication", "evaluation"],
-    wellness: ["wellness", "iv", "hydration"],
-    virtual: ["telemedicine", "virtual", "online"],
-    training: ["preceptorship", "training", "student"]
-  };
+  primary: ["primary", "physical", "preventive", "checkup", "chronic", "disease", "diabetes", "thyroid", "heart", "hypertension", "management"],
+  psychiatry: ["psychiatry", "psychotherapy", "therapy", "counseling", "medication", "evaluation", "anxiety", "depression", "trauma"],
+  wellness: ["wellness", "lifestyle", "weight", "loss", "iv", "hydration", "vitamins", "recovery", "coaching", "fatigue"],
+  virtual: ["telemedicine", "virtual", "online", "follow-up"]
+};
+
 
   const need = map[activeFilter] || [];
   const catOk = need.some((k) => tags.includes(k));
@@ -228,54 +236,42 @@ const modalList = $("#modalList");
 
 // Modal content (services + practitioners)
 const modalContent = {
-  "Psychiatric Evaluations": {
-    tag: "Psychiatry",
-    body:
-      "Comprehensive evaluation of symptoms, history, and goals. Includes treatment planning and medication management focused on effectiveness, tolerability, and follow-up.",
-    bullets: []
-  },
-  "Annual Physicals": {
-    tag: "Primary Care",
-    body:
-      "Preventive annual exams including vitals, health history review, lifestyle discussion, and recommended screenings/labs when appropriate—designed to catch issues early.",
-    bullets: []
-  },
-  "IV Hydration Therapy": {
-    tag: "Wellness",
-    body:
-      "Hydration therapy tailored to your needs (fatigue, dehydration, recovery, travel). Includes a brief assessment to ensure safety and determine the best option.",
-    bullets: []
-  },
-  "NP Preceptorship": {
-    tag: "Training",
-    body:
-      "Preceptorship opportunities for Nurse Practitioner students based on availability. Includes supervised clinical exposure and structured learning goals.",
-    bullets: []
-  },
-  "Psychotherapy": {
-    tag: "Therapy",
-    body:
-      "Supportive psychotherapy to address anxiety, depression, trauma, and life stressors—building coping skills and emotional resilience with evidence-informed techniques.",
-    bullets: []
-  },
-  "Weight Loss Management": {
-    tag: "Lifestyle",
-    body:
-      "Individualized support for sustainable weight goals—habits, accountability, and health coaching with attention to mind-body factors that influence progress.",
-    bullets: []
-  },
-  "Telemedicine": {
-    tag: "Virtual",
-    body:
-      "Secure virtual visits for many services including evaluations, follow-ups, and medication management—convenient care from home while maintaining continuity.",
-    bullets: []
-  },
-  "Chronic Disease Management": {
-    tag: "Primary Care",
-    body:
-      "Ongoing care for diabetes, thyroid disorders, heart disease, and more—monitoring, medication review, lifestyle coaching, and coordinated follow-through.",
-    bullets: []
-  },
+"Psychiatry & Psychotherapy": {
+  tag: "Psychiatry & Therapy",
+  body:
+    "Integrated behavioral health care that includes psychiatric evaluations, psychotherapy, and medication management. Visits focus on understanding your goals, creating a clear plan, and providing supportive follow-through.",
+  bullets: [
+    "Psychiatric evaluations + treatment planning",
+    "Psychotherapy for stress, anxiety, depression, and life transitions",
+    "Medication management when appropriate",
+    "Supportive care with clear next steps and follow-up"
+  ]
+},
+
+"Primary Care & Chronic Disease": {
+  tag: "Primary Care",
+  body:
+    "Comprehensive primary care that combines annual physicals and preventive screenings with ongoing management of chronic conditions. The goal is long-term health with practical guidance and consistent monitoring.",
+  bullets: [
+    "Annual physicals + preventive screenings",
+    "Ongoing chronic disease management (e.g., diabetes, hypertension, thyroid)",
+    "Medication review + lab follow-ups (as appropriate)",
+    "Lifestyle coaching and coordinated care"
+  ]
+},
+
+"Lifestyle & Wellness": {
+  tag: "Lifestyle & Wellness",
+  body:
+    "Wellness services designed to support your energy, recovery, and health goals. Includes lifestyle/weight support and IV hydration options tailored to your needs after a brief assessment.",
+  bullets: [
+    "Weight loss guidance and sustainable habit support",
+    "IV hydration therapy options for recovery/energy (as appropriate)",
+    "Goal tracking and practical coaching",
+    "Focused on safe, steady, long-term progress"
+  ]
+},
+
 
   // UPDATED: longer bios + bullet highlights
   "Meet Abu": {
