@@ -674,17 +674,19 @@ h3{ margin: 0 0 .35rem; }
 .section-lead-ink{ color: var(--muted); }
 
 .card-grid{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* prevents overflow */
   gap: 1rem;
   margin-top: 1.6rem;
 }
+
 .card{
   background: rgba(255,255,255,.75);
   border: 1px solid rgba(11,27,43,.08);
   border-radius: var(--radius);
   padding: 1.1rem 1.1rem 1.15rem;
   box-shadow: var(--shadow2);
+  min-width: 0; 
 }
 .muted-ink{ color: var(--muted); font-weight: 800; margin: .2rem 0 .55rem; }
 
@@ -892,6 +894,7 @@ textarea{ resize: vertical; }
 }
 
 @media (max-width: 980px){
+  .card-grid{ grid-template-columns: 1fr; 
   .about-visual{
     grid-template-columns: 1fr;
       align-items: stretch;
