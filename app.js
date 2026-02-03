@@ -92,27 +92,88 @@ onScroll();
 
 toTop?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
+// // -----------------------------
+// // Active nav section highlight
+// // -----------------------------
+// const sections = ["about", "services", "team", "benefits", "contact"].map((id) => document.getElementById(id));
+// const navLinks = $$("nav a[data-nav]");
+
+// const sectionObserver = new IntersectionObserver(
+//   (entries) => {
+//     const visible = entries
+//       .filter((e) => e.isIntersecting)
+//       .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+//     if (!visible) return;
+//     const id = visible.target.id;
+
+//     navLinks.forEach((a) => a.classList.toggle("active", a.dataset.nav === id));
+//   },
+//   { root: null, threshold: [0.25, 0.4, 0.6] }
+// );
+
+// sections.forEach((s) => s && sectionObserver.observe(s));
+
 // -----------------------------
-// Active nav section highlight
+// Active nav highlight (ScrollSpy) — reliable with sticky header
 // -----------------------------
-const sections = ["about", "services", "team", "benefits", "contact"].map((id) => document.getElementById(id));
-const navLinks = $$("nav a[data-nav]");
+const headerEl = document.getElementById("header");
+const navLinks = [...document.querySelectorAll("nav a[data-nav]")];
+const sectionEls = navLinks
+  .map(a => document.getElementById(a.dataset.nav))
+  .filter(Boolean);
 
-const sectionObserver = new IntersectionObserver(
-  (entries) => {
-    const visible = entries
-      .filter((e) => e.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+function headerOffset() {
+  // sticky header height + small breathing space
+  return (headerEl?.offsetHeight || 0) + 12;
+}
 
-    if (!visible) return;
-    const id = visible.target.id;
+function setActiveNav(id) {
+  navLinks.forEach((a) => {
+    const active = a.dataset.nav === id;
+    a.classList.toggle("active", active);
+    if (active) a.setAttribute("aria-current", "page");
+    else a.removeAttribute("aria-current");
+  });
+}
 
-    navLinks.forEach((a) => a.classList.toggle("active", a.dataset.nav === id));
-  },
-  { root: null, threshold: [0.25, 0.4, 0.6] }
-);
+function updateActiveOnScroll() {
+  const y = window.scrollY + headerOffset() + 80; // 80px makes it feel natural
+  let currentId = sectionEls[0]?.id;
 
-sections.forEach((s) => s && sectionObserver.observe(s));
+  for (const sec of sectionEls) {
+    if (sec.offsetTop <= y) currentId = sec.id;
+  }
+  if (currentId) setActiveNav(currentId);
+}
+
+window.addEventListener("scroll", updateActiveOnScroll, { passive: true });
+window.addEventListener("resize", updateActiveOnScroll);
+updateActiveOnScroll();
+
+// Make clicks highlight immediately + scroll with header offset
+navLinks.forEach((a) => {
+  a.addEventListener("click", (e) => {
+    e.preventDefault();
+    const id = a.dataset.nav;
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    setActiveNav(id);
+
+    // close mobile nav if open
+    const nav = document.getElementById("siteNav");
+    const toggle = document.getElementById("navToggle");
+    if (nav?.classList.contains("open")) {
+      nav.classList.remove("open");
+      toggle?.setAttribute("aria-expanded", "false");
+    }
+
+    const top = target.getBoundingClientRect().top + window.scrollY - headerOffset();
+    window.scrollTo({ top, behavior: "smooth" });
+  });
+});
+
 
 // -----------------------------
 // Reveal on scroll
